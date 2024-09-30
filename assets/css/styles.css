@@ -1032,3 +1032,9 @@ button{
 }
 
 
+.full-screen-iframe {
+  width: 100vw;  /* Larghezza al 100% della viewport */
+  height: calc(100vh - var(--header-height));  /* Altezza della viewport meno l'altezza della navbar */
+  border: none;
+  display: block;
+}
