@@ -6,16 +6,17 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --hue: 0;
-  --first-color: hsl(var(--hue), 77%, 70%);
-  --first-color-alt: hsl(var(--hue), 91%, 50%);
+  --hue: 260;
+  --hue-2: 160;
+  --first-color: hsl(var(--hue-2), 80%, 50%);
+  --first-color-alt: hsl(var(--hue-2), 60%, 50%);
   --title-color: hsl(var(--hue), 4%, 100%);
   --text-color: hsl(var(--hue), 4%, 85%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
 
   /*Green gradient*/
-  --body-color: linear-gradient(90deg, hsl(260, 80%, 40%) 0%, hsl(163, 80%, 40%) 100%);
-  --container-color: linear-gradient(136deg, hsl(260, 80%, 40%) 0%, hsl(163, 80%, 40%) 100%);
+  --body-color: linear-gradient(90deg, hsl(260, 80%, 40%) 0%, hsl(163, 80%, 50%) 100%);
+  --container-color: linear-gradient(136deg, hsl(260, 80%, 40%) 0%, hsl(163, 80%, 50%) 100%);
   
   /*Red gradient*/
   /* --body-color: linear-gradient(90deg, hsl(360, 28%, 40%) 0%, hsl(18, 28%, 40%) 100%);
@@ -428,7 +429,6 @@ button{
 .about__img{
   width: 200px;
   justify-self: center;
-  animation: floating 2s ease-in-out infinite;
 }
 
 /*=============== TRICK OR TREAT ===============*/
@@ -780,6 +780,7 @@ button{
     grid-template-columns: .8fr;
     justify-content: center;
   }
+
 }
 
 /* For medium devices */
@@ -790,9 +791,11 @@ button{
   }
 
   .newsletter__container{
-    display: grid;
-    grid-template-columns: .7fr;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra il contenuto */
+    justify-content: center; /* Centra verticalmente se necessario */
+    text-align: center; /* Assicura che il pulsante venga centrato */
   }
   .newsletter__description{
     padding: 0 3rem;
@@ -1009,9 +1012,23 @@ button{
   }
 }
 
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .footer__logo {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer__img-two {
+      display: none;
+  }
+}
+
 /*=============== KEYFRAMES ===============*/
 @keyframes floating {
   0% { transform: translate(0,  0px); }
   50%  { transform: translate(0, 15px); }
   100%   { transform: translate(0, -0px); }   
 }
+
+
