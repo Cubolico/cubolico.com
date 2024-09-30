@@ -102,3 +102,12 @@ sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
 sr.reveal(`.category__data, .product__content, .footer__content`,{interval: 100})
 sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
 sr.reveal(`.about__img, .discount__data`,{origin: 'right'})
+
+function copyToClipboard() {
+    var copyText = document.getElementById("serverAddress");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // Per i dispositivi mobili
+    document.execCommand("copy");
+
+    alert("Indirizzo " + copyText.value + " copiato! Ora puoi aprire Minecraft Java Edition e andare su Multigiocatore > Aggiungi server > Indirizzo del server. Ti basterà incollare l'indirizzo appena copiato e poi premere su Fatto. Buon gioco!");
+}
